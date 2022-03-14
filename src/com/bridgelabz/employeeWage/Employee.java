@@ -2,11 +2,15 @@ package com.bridgelabz.employeeWage;
 
 public class Employee
 {
-    public static final int IS_FULL_TIME = 1;
+
+    /*
+    Use Case 1 Employee Present Or Absent
+     */
     public void empPresentAbsent()
     {
+        int isFullTime = 1;
        double empCheck = Math.floor(Math.random() * 10) % 2 ;
-        if(empCheck == IS_FULL_TIME )
+        if(empCheck == isFullTime )
         {
             System.out.println("Employee is Present");
         }
@@ -14,12 +18,199 @@ public class Employee
         {
             System.out.println("Employee is Absent");
         }
+        System.out.println("");
     }
+
+    /*
+    Use Case 2 calculate daily Employee wages
+     */
+    public void calculateDailyEmpWage()
+    {
+         int isFullTime = 1;
+         int empHours = 0 ;
+         int empWage  = 0 ;
+         int empRatePerHour = 20;
+
+         double empCheck = Math.floor(Math.random() * 10 ) % 2 ;
+         if(empCheck == isFullTime)
+         {
+             empHours = 8;
+             System.out.println("Employee Present");
+         }
+         else
+         {
+            empHours = 0 ;
+             System.out.println("Employee Absent");
+         }
+         empWage = empHours * empRatePerHour;
+        System.out.println("Employee wage : ( " +empHours+ " * " +empRatePerHour+  " ) : "+empWage);
+        System.out.println("");
+    }
+
+    /*
+    Use case 3 Add part-time Employee & Wage
+     */
+    public void addPartTimeEmp()
+    {
+        int isPartTime = 1;
+        int isFullTime = 2;
+        int empRatePerHour = 20;
+        int empHours;
+        int empWage ;
+        double empCheck = Math.floor(Math.random() * 10 ) % 3;
+        if(empCheck == isPartTime)
+        {
+            empHours = 4;
+            System.out.println("Employee Working Part Time");
+            empWage = empHours * empRatePerHour ;
+        }
+        else if(empCheck == isFullTime)
+        {
+            empHours = 8;
+            System.out.println("Employee Working Full Time");
+            empWage = empHours * empRatePerHour ;
+        }
+        else
+        {
+            empHours = 0;
+            System.out.println("Employee is Absent");
+            empWage = empHours * empRatePerHour ;
+        }
+
+        System.out.println("Employee Wage : ( " +empHours+ " * " +empRatePerHour+  " ) : "+empWage);
+        System.out.println("");
+    }
+
+    /*
+    Use Case 4 using Switch Case Statement
+     */
+    public void usingSwitchCase()
+    {
+        int empHours = 0 ;
+        int empWage = 0;
+        int empRatePerHour = 20;
+        double empCheck =  Math.floor(Math.random() * 10) % 3;
+
+        switch ((int) empCheck)
+        {
+            case 1 :
+                     empHours = 4;
+                     System.out.println("Employee Working Part Time");
+                     break;
+
+            case 2 :
+                     empHours = 8;
+                     System.out.println("Employee Working Full Time");
+                     break;
+
+            case 3 :
+                      empHours = 0;
+                      System.out.println("Employee is Absent");
+                      break;
+        }
+
+        empWage = empHours * empRatePerHour ;
+        System.out.println("Employee Wage : ( " +empHours+ " * " +empRatePerHour+  " ) : "+empWage);
+        System.out.println("");
+
+    }
+
+   /*
+    Use Case 5 Calculating Wages for month
+ */
+    public void calculatingWagesForMonth()
+    {
+        int empHours = 0 ;
+        int empWage = 0;
+        int empRatePerHour = 20;
+        int workingDays = 20;
+        int totalEmpWage = 0;
+        double empCheck =  Math.floor(Math.random() * 10) % 3;
+         for(int day = 0; day < workingDays ; day++)
+         {
+
+             switch ((int) empCheck)
+             {
+                 case 1 :
+                     empHours = 4;
+                     System.out.println("Employee Working Part Time");
+                     break;
+
+                 case 2 :
+                     empHours = 8;
+                     System.out.println("Employee Working Full Time");
+                     break;
+
+                 case 3 :
+                     empHours = 0;
+                     System.out.println("Employee is Absent");
+                     break;
+             }
+                 empWage = empHours * empRatePerHour ;
+               System.out.println("One Day Employee Wage : " +empWage);
+             System.out.println("");
+               totalEmpWage = empWage * empRatePerHour ;
+
+         }
+
+        System.out.println("Total Monthly Employee Wages : ( " +empWage+ " * " +empRatePerHour+ ") : "+totalEmpWage);
+        System.out.println("");
+    }
+
+    /*
+    Use Case 6 Calculate Wages till a condition of total
+    working hours or days is reached for a month
+     */
+    public void totalWageForWorkingHoursOrDays()
+    {
+        int empHours = 0;
+        int totalEmpHours = 0;
+        int workingHours = 0;
+        int empWage = 0 ;
+        int empRatePerHour = 20;
+        int totalEmpWage;
+        int day = 1 ;
+        double empCheck = Math.floor(Math.random() * 10) % 3 ;
+
+       while ( day < 20 && totalEmpHours < 100)
+       {
+           switch ((int) empCheck)
+           {
+               case 1 :
+                   empHours = 4;
+                   System.out.println("Employee Working Part Time");
+                   break;
+
+               case 2 :
+                   empHours = 8;
+                   System.out.println("Employee Working Full Time");
+                   break;
+
+               case 3 :
+                   empHours = 0;
+                   System.out.println("Employee is Absent");
+                   break;
+           }
+
+           totalEmpHours = totalEmpHours + empHours ;
+           day++;
+       }
+        System.out.println("");
+        System.out.println( "Total Employee Hours : " +totalEmpHours);
+        totalEmpWage = totalEmpHours * empRatePerHour;
+        System.out.println("Total Employee Wage  : ( " +totalEmpHours+ " * " +empRatePerHour+ " ) : " +totalEmpWage);
+    }
+
     public static void main(String[] args)
     {
-        System.out.println("----WelCome to Employee Wage Computation----");
+        System.out.println("-*-*-*- WelCome to Employee Wage Computation -*-*-*-");
           Employee employee = new Employee();
-          employee.empPresentAbsent();
+////          employee.empPresentAbsent();
+////          employee.calculateDailyEmpWage( );
+////          employee.addPartTimeEmp();
+////          employee.usingSwitchCase();
+//          employee.calculatingWagesForMonth();
+           employee.totalWageForWorkingHoursOrDays();
 
     }
 }
