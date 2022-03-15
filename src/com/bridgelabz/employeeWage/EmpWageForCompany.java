@@ -23,9 +23,8 @@ public class EmpWageForCompany
 
     public static void main(String[] args)
     {
-
         EmpWageForCompany dmart = new EmpWageForCompany("Dmart",20,2,10);
-       // EmpWageForCompany reliance = new EmpWageForCompany("Reliance",10,3,5);
+
       // variables
         int empHours = 0;
         int totalEmpHours = 0;
