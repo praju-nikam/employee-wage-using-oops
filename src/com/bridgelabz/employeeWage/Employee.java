@@ -205,12 +205,12 @@ public class Employee
     {
         System.out.println("-*-*-*- WelCome to Employee Wage Computation -*-*-*-");
           Employee employee = new Employee();
-////          employee.empPresentAbsent();
-////          employee.calculateDailyEmpWage( );
-////          employee.addPartTimeEmp();
-////          employee.usingSwitchCase();
-//          employee.calculatingWagesForMonth();
-           employee.totalWageForWorkingHoursOrDays();
+          employee.empPresentAbsent();
+          employee.calculateDailyEmpWage( );
+          employee.addPartTimeEmp();
+          employee.usingSwitchCase();
+          employee.calculatingWagesForMonth();
+          employee.totalWageForWorkingHoursOrDays();
 
     }
 }
