@@ -54,6 +54,41 @@ public class Employee
         System.out.println("");
     }
 
+    /*
+    Use case 3 Add part-time Employee & Wage
+  */
+    public void addPartTimeEmp()
+    {
+        int isPartTime = 1;
+        int isFullTime = 2;
+        int empRatePerHour = 20;
+        int empHours;
+        int empWage ;
+        double empCheck = Math.floor(Math.random() * 10 ) % 3;
+        if(empCheck == isPartTime)
+        {
+            empHours = 4;
+            System.out.println("Employee Working Part Time");
+            empWage = empHours * empRatePerHour ;
+        }
+        else if(empCheck == isFullTime)
+        {
+            empHours = 8;
+            System.out.println("Employee Working Full Time");
+            empWage = empHours * empRatePerHour ;
+        }
+        else
+        {
+            empHours = 0;
+            System.out.println("Employee is Absent");
+            empWage = empHours * empRatePerHour ;
+        }
+
+        System.out.println("Employee Wage : ( " +empHours+ " * " +empRatePerHour+  " ) : "+empWage);
+        System.out.println("");
+    }
+
+
     public static void main(String[] args)
     {
         System.out.println("-*-*-*-*-*- WelCome to Employee Wage Computation -*-*-*-*-*-");
@@ -61,7 +96,7 @@ public class Employee
         // Call Methods
           employee.empPresentAbsent();
           employee.calculateDailyEmpWage( );
-
+          employee.addPartTimeEmp();
 
 
 
