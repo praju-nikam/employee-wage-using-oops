@@ -2,6 +2,7 @@ package com.bridgelabz.employeeWage;
 
 public class EmpWageForCompany
 {
+    // Variables
     public static final int isPartTime = 1;
     public static final int isFullTime = 2;
 
@@ -23,7 +24,8 @@ public class EmpWageForCompany
 
     public static void main(String[] args)
     {
-        EmpWageForCompany dmart = new EmpWageForCompany("Dmart",20,2,10);
+        // create Object
+        EmpWageForCompany dmart = new EmpWageForCompany("DMart",20,2,10);
 
       // variables
         int empHours = 0;
