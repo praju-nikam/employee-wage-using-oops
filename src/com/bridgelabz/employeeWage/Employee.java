@@ -211,7 +211,41 @@ public class Employee
         System.out.println("Total Employee Wage  : ( " +totalEmpHours+ " * " +empRatePerHour+ " ) : " +totalEmpWage);
     }
 
+ /*
+       use case 8  Compute Employee Wages for Multiple Companies
+  */
 
+    public static int calEmpWageForCompanies(String company, int empRatePerHours,int numOfWorkingDays,int maxHourPerMonth)
+    {
+        int empHours = 0;
+        int totalEmpHours = 0;
+        int totalWorkingDays = 0;
+
+        while ( totalEmpHours <= maxHourPerMonth && totalWorkingDays < numOfWorkingDays)
+        {
+            totalWorkingDays++;
+            int empCheck = (int) (Math.floor(Math.random() * 10 ) % 3);
+
+            switch (empCheck)
+            {
+                case isPartTime :
+                    empHours = 4;
+                    break;
+                case isFullTime :
+                    empHours = 8;
+                    break;
+                default:
+                    empHours = 0;
+            }
+
+            totalEmpHours = totalEmpHours + empHours;
+            System.out.println("Days : " +totalWorkingDays+ " emp Hours : " +empHours);
+
+        }
+        int totalEmpWage = totalEmpHours * empRatePerHours;
+        System.out.println("Total Employee Wage for Company : " +company+ " is : ( " +totalEmpHours+ " * " +empRatePerHours+ " ) : " +totalEmpWage);
+        return totalEmpWage;
+    }
     public static void main(String[] args)
     {
         System.out.println("-*-*-*-*-*- WelCome to Employee Wage Computation -*-*-*-*-*-");
@@ -223,5 +257,7 @@ public class Employee
           employee.usingSwitchCase();
           employee.calculatingWagesForMonth();
           employee.totalWageForWorkingHoursOrDays();
+        employee.calEmpWageForCompanies("DMart", 20,2,10);
+        employee.calEmpWageForCompanies("Reliance",10,4,20);
     }
 }
