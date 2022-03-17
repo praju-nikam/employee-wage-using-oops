@@ -167,6 +167,51 @@ public class Employee
     }
 
 
+    /*
+        Use Case 6 Calculate Wages till a condition of total
+         working hours or days is reached for a month
+    */
+    public void totalWageForWorkingHoursOrDays()
+    {
+        int empHours = 0;
+        int totalEmpHours = 0;
+        int workingHours = 0;
+        int empWage = 0 ;
+        int empRatePerHour = 20;
+        int totalEmpWage;
+        int day = 1 ;
+        double empCheck = Math.floor(Math.random() * 10) % 3 ;
+
+        while ( day < 20 && totalEmpHours < 100)
+        {
+            switch ((int) empCheck)
+            {
+                case 1 :
+                    empHours = 4;
+                    System.out.println("Employee Working Part Time");
+                    break;
+
+                case 2 :
+                    empHours = 8;
+                    System.out.println("Employee Working Full Time");
+                    break;
+
+                case 3 :
+                    empHours = 0;
+                    System.out.println("Employee is Absent");
+                    break;
+            }
+
+            totalEmpHours = totalEmpHours + empHours ;
+            day++;
+        }
+        System.out.println("");
+        System.out.println( "Total Employee Hours : " +totalEmpHours);
+        totalEmpWage = totalEmpHours * empRatePerHour;
+        System.out.println("Total Employee Wage  : ( " +totalEmpHours+ " * " +empRatePerHour+ " ) : " +totalEmpWage);
+    }
+
+
     public static void main(String[] args)
     {
         System.out.println("-*-*-*-*-*- WelCome to Employee Wage Computation -*-*-*-*-*-");
@@ -177,6 +222,6 @@ public class Employee
           employee.addPartTimeEmp();
           employee.usingSwitchCase();
           employee.calculatingWagesForMonth();
-
+          employee.totalWageForWorkingHoursOrDays();
     }
 }
