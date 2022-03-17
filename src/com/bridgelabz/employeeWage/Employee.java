@@ -257,7 +257,7 @@ public class Employee
           employee.usingSwitchCase();
           employee.calculatingWagesForMonth();
           employee.totalWageForWorkingHoursOrDays();
-        employee.calEmpWageForCompanies("DMart", 20,2,10);
-        employee.calEmpWageForCompanies("Reliance",10,4,20);
+          employee.calEmpWageForCompanies("DMart", 20,2,10);
+          employee.calEmpWageForCompanies("Reliance",10,4,20);
     }
 }
