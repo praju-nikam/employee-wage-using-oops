@@ -10,7 +10,7 @@ public class Employee
 
 
     /*
-    Use Case 1 Employee Present Or Absent
+        Use Case 1 Employee Present Or Absent
      */
     public void empPresentAbsent()
     {
@@ -27,13 +27,40 @@ public class Employee
         System.out.println("");
     }
 
+
+    /*
+    Use Case 2 calculate daily Employee wages
+     */
+    public void calculateDailyEmpWage()
+    {
+        int isFullTime = 1;
+        int empHours = 0 ;
+        int empWage  = 0 ;
+        int empRatePerHour = 20;
+
+        double empCheck = Math.floor(Math.random() * 10 ) % 2 ;
+        if(empCheck == isFullTime)
+        {
+            empHours = 8;
+            System.out.println("Employee Present");
+        }
+        else
+        {
+            empHours = 0 ;
+            System.out.println("Employee Absent");
+        }
+        empWage = empHours * empRatePerHour;
+        System.out.println("Employee wage : ( " +empHours+ " * " +empRatePerHour+  " ) : "+empWage);
+        System.out.println("");
+    }
+
     public static void main(String[] args)
     {
         System.out.println("-*-*-*-*-*- WelCome to Employee Wage Computation -*-*-*-*-*-");
           Employee employee = new Employee(); // Create Object
         // Call Methods
           employee.empPresentAbsent();
-
+          employee.calculateDailyEmpWage( );
 
 
 
