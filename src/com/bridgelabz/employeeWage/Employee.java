@@ -1,11 +1,21 @@
 package com.bridgelabz.employeeWage;
 
-public class Employee {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Employee<CompanyEmpWage> {
     public static final int isPartTime = 1;
     public static final int isFullTime = 2;
 
     public static final int numOfWorkingDays = 2;
     static int totalEmpWage;
+    private static int empRatePerHour;
+    private static int numberOfWorkingDays;
+    private static int maximumHrsInMonth;
+    private static String company;
+
+    public Employee(String company, int empRatePerHour, int numberOfWorkingDays, int maximumHrsInMonth) {
+    }
 
     /*
         Use Case 1 Employee Present Or Absent
@@ -218,52 +228,6 @@ public class Employee {
         return totalEmpWage;
     }
 
-    /*
-     Use  case 9  Employee Wage of each Company
-  */
-    private static String company = null;
-    private static int empRatePerHour = 0;
-    private static int numberOfWorkingDays = 0;
-    private static int maximumHrsInMonth = 0;
-
-
-    public Employee(String company, int empRatePerHour, int numberOfWorkingDays, int maximumHrsInMonth) {
-        Employee.company = company;
-        Employee.empRatePerHour = empRatePerHour;
-        Employee.numberOfWorkingDays = numberOfWorkingDays;
-        Employee.maximumHrsInMonth = maximumHrsInMonth;
-        totalEmpWage = totalEmpWage;
-    }
-
-    public void computeWage() {
-        int empHrs = 0;
-        int totalWorkingDays = 0;
-        int totalEmpHrs = 0;
-
-        while (totalEmpHrs <= maximumHrsInMonth && totalWorkingDays <= numOfWorkingDays) {
-            totalWorkingDays++;
-            double empCheck = Math.floor(Math.random() * 10) % 3;
-
-            switch ((int) empCheck) {
-                case isPartTime:
-                    empHrs = 4;
-                    break;
-                case isFullTime:
-                    empHrs = 8;
-                    break;
-                default:
-                    empHrs = 0;
-            }
-            totalEmpHrs = totalEmpHrs + empHrs;
-            System.out.println("Day : " + totalWorkingDays + " Emp Hours : " + empHrs);
-        }
-        totalEmpWage = totalEmpHrs * empRatePerHour;
-        System.out.println("Total Wage For Company " + company + " is : " + totalEmpWage);
-    }
-
- /*
-  Use case 10
-  */
     public static void main(String[] args) {
         System.out.println("-*-*-*-*-*- WelCome to Employee Wage Computation -*-*-*-*-*-");
         Employee employee = new Employee(company, empRatePerHour, numberOfWorkingDays, maximumHrsInMonth); // Create Object
@@ -274,14 +238,10 @@ public class Employee {
 //          employee.usingSwitchCase();
 //          employee.calculatingWagesForMonth();
 //          employee.totalWageForWorkingHoursOrDays();
-//         employee.calEmpWageForCompanies("DMart", 20,2,10);
-//         employee.calEmpWageForCompanies("Reliance",10,4,20);
-        Employee dMart = new Employee("DMart", 20, 2, 10);
-        dMart.computeWage();
-        System.out.println(dMart);
-        Employee reliance = new Employee("Reliance", 10, 4, 20);
-        reliance.computeWage();
-        System.out.println(reliance);
+             employee.calEmpWageForCompanies("DMart", 20,2,10);
+            employee.calEmpWageForCompanies("Reliance",10,4,20);
+
+
 
     }
 }
